@@ -74,6 +74,7 @@ const projects = [
   {
     number: '01',
     name: 'AI Resume Screening System',
+    image: 'https://images.unsplash.com/photo-1677442136019-21780ecad995?auto=format&fit=crop&w=1200&q=85',
     type: 'Generative AI · Full Stack',
     description: 'An AI-powered hiring platform that analyzes candidate resumes against job descriptions and helps rank relevant profiles.',
     stack: ['React.js', 'TypeScript', 'Python', 'FastAPI', 'MongoDB', 'OpenAI API', 'JWT'],
@@ -82,6 +83,7 @@ const projects = [
   {
     number: '02',
     name: 'VoigtIndustries-RETL',
+    image: 'https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&w=1200&q=85',
     type: 'Enterprise · React Frontend',
     description: 'A scalable single-page application built with reusable UI architecture and centralized state management.',
     stack: ['React.js', 'TypeScript', 'Redux Toolkit', 'RTK Query', 'Node.js', 'Python', 'MongoDB'],
@@ -90,6 +92,7 @@ const projects = [
   {
     number: '03',
     name: 'ATS — Applicant Tracking System',
+    image: 'https://images.unsplash.com/photo-1551434678-e076c223a692?auto=format&fit=crop&w=1200&q=85',
     type: 'Enterprise · Angular',
     description: 'A hiring workflow platform supporting the candidate journey from job management and interviews to offers and onboarding.',
     stack: ['Angular 17', 'TypeScript', 'PrimeNG', 'RxJS', 'NgRx', 'Node.js', 'Python'],
@@ -98,6 +101,7 @@ const projects = [
   {
     number: '04',
     name: 'KYS — Subscription Management',
+    image: 'https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?auto=format&fit=crop&w=1200&q=85',
     type: 'Subscription · Web Application',
     description: 'An e-commerce and subscription management application covering administration, plans and subscription workflows.',
     stack: ['Angular 10', 'RxJS', 'JavaScript', 'Python', 'Spring Boot', 'MySQL'],
@@ -106,6 +110,7 @@ const projects = [
   {
     number: '05',
     name: 'Joshter — Employment Portal',
+    image: 'https://images.unsplash.com/photo-1521737711867-e3b97375f902?auto=format&fit=crop&w=1200&q=85',
     type: 'Employment · Web Application',
     description: 'A job portal experience connecting job seekers and employers through profile, CV and authenticated user journeys.',
     stack: ['Angular 9', 'RxJS', 'JavaScript', 'Node.js', 'MySQL'],
@@ -215,7 +220,7 @@ function App() {
 
               <div className="profile-image-wrapper">
                 <img
-                  src="/profile-placeholder.jpeg"
+                  src="/gourav-hero.jpeg"
                   alt="Gourav Ojha"
                   className="profile-photo"
                 />
@@ -262,6 +267,15 @@ function App() {
             <div className="about-lead">
               <span className="quote-mark">“</span>
               <h3>I turn ideas into dependable, user-focused software.</h3>
+              <div className="about-image-frame">
+                <img
+                  src="/gourav-about.jpeg"
+                  alt="Modern developer workspace"
+                  className="about-image"
+                  loading="lazy"
+                />
+                <span className="image-caption"><Code2 size={14} /> Building ideas into products</span>
+              </div>
             </div>
             <div className="about-content">
               <p>I'm a Full Stack Developer with 5+ years of experience building responsive, scalable and high-performance web applications. My core strengths are modern frontend engineering, API integration, state management and creating maintainable application architecture.</p>
@@ -310,6 +324,13 @@ function App() {
             title={<>Where I've <span className="gradient-text">made a difference.</span></>}
             text="Professional experience building and improving production web applications."
           />
+          <div className="experience-photo-card">
+            <img src="/gourav-experience.jpeg" alt="Gourav Ojha - professional portrait" loading="lazy" />
+            <div className="experience-photo-overlay">
+              <span className="eyebrow">BUILD · LEARN · GROW</span>
+              <h3>Turning ideas into impactful digital products.</h3>
+            </div>
+          </div>
           <div className="timeline">
             {experience.map((job, index) => (
               <motion.article
@@ -352,6 +373,10 @@ function App() {
                 viewport={{ once: true }}
                 transition={{ delay: index * 0.06 }}
               >
+                <div className="project-image-wrap">
+                  <img src={project.image} alt={`${project.name} preview`} className="project-image" loading="lazy" />
+                  <span className="project-image-label">PROJECT PREVIEW</span>
+                </div>
                 <div className="project-top">
                   <span className="project-number">{project.number} / 05</span>
                   <span className="project-type">{project.type}</span>
