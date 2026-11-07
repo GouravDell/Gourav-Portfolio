@@ -1393,3 +1393,205 @@ svg {
   .experience-photo-card, .experience-photo-overlay { min-height: 210px; }
   .experience-photo-overlay { padding: 24px; }
 }
+
+
+/* =====================================
+   MOBILE WIDTH / RIGHT-OVERFLOW FIX
+   Added after reviewing the uploaded stylesheet
+===================================== */
+
+html,
+body,
+#root,
+.app-shell {
+  max-width: 100%;
+  width: 100%;
+  overflow-x: clip;
+}
+
+.section-wrap,
+.section-block,
+.hero,
+.hero-copy,
+.hero-visual,
+.about-grid,
+.about-content,
+.skills-grid,
+.timeline,
+.timeline-item,
+.experience-card,
+.projects-grid,
+.project-card,
+.education-card,
+.contact-section,
+.contact-panel,
+.footer {
+  min-width: 0;
+  max-width: 100%;
+}
+
+img,
+video,
+iframe,
+svg {
+  max-width: 100%;
+}
+
+@media (max-width: 768px) {
+  .hero,
+  .about-grid,
+  .skills-grid,
+  .projects-grid {
+    width: 100%;
+    grid-template-columns: minmax(0, 1fr);
+  }
+
+  .hero-visual {
+    width: 100%;
+    max-width: 440px;
+    min-width: 0;
+    margin-inline: auto;
+    padding-inline: 12px;
+    overflow: hidden;
+    isolation: isolate;
+  }
+
+  .orbit-one,
+  .orbit-two {
+    left: 50%;
+    right: auto;
+    top: 50%;
+    width: min(92%, 390px);
+    height: auto;
+    aspect-ratio: 1;
+    transform: translate(-50%, -50%);
+  }
+
+  .profile-card {
+    width: 100%;
+    max-width: 350px;
+    min-width: 0;
+  }
+
+  .float-chip {
+    max-width: calc(100% - 20px);
+    white-space: normal;
+  }
+
+  .chip-react,
+  .chip-ai {
+    right: 8px;
+  }
+
+  .chip-python {
+    left: 8px;
+  }
+
+  .experience-top,
+  .education-card,
+  .contact-details,
+  .footer {
+    min-width: 0;
+    max-width: 100%;
+  }
+
+  .experience-top > *,
+  .education-card > *,
+  .contact-details > * {
+    min-width: 0;
+    overflow-wrap: anywhere;
+  }
+
+  .contact-panel {
+    width: 100%;
+    padding: 30px 22px;
+  }
+}
+
+@media (max-width: 480px) {
+  .section-wrap {
+    width: calc(100% - 30px);
+    max-width: 100%;
+  }
+
+  .navbar {
+    width: 100%;
+    max-width: 100%;
+    gap: 12px;
+    padding-inline: 15px;
+  }
+
+  .logo {
+    max-width: calc(100% - 52px);
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+
+  .hero h1 {
+    max-width: 100%;
+    overflow-wrap: anywhere;
+    font-size: clamp(30px, 9vw, 36px);
+  }
+
+  .hero-description,
+  .section-heading p,
+  .about-content p,
+  .project-description,
+  .project-points,
+  .experience-card li {
+    overflow-wrap: anywhere;
+  }
+
+  .hero-actions,
+  .hero-actions .btn {
+    width: 100%;
+    min-width: 0;
+  }
+
+  .stats-strip {
+    width: 100%;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .stats-strip > div {
+    min-width: 0;
+  }
+
+  .about-image-frame {
+    width: 100%;
+    min-width: 0;
+    min-height: 0;
+    aspect-ratio: 16 / 10;
+  }
+
+  .about-image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+
+  .project-image-wrap {
+    width: auto;
+    max-width: none;
+  }
+
+  .contact-details a {
+    max-width: 100%;
+    overflow-wrap: anywhere;
+  }
+}
+
+@media (max-width: 360px) {
+  .section-wrap {
+    width: calc(100% - 24px);
+  }
+
+  .hero-visual {
+    padding-inline: 8px;
+  }
+
+  .float-chip {
+    font-size: 9px;
+    padding: 6px 8px;
+  }
+}
